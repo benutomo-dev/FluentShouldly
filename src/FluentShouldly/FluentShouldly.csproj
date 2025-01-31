@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0;netstandard2.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <!-- NuGet -->
+  <PropertyGroup>
+    <PackageVersion>0.0.2-preview</PackageVersion>
+
+    <PackageId>Benutomo.FluentShouldly</PackageId>
+    <Description>FluentAssertions-style syntax support for Shouldly. This package provides a fluent interface for Shouldly assertions, allowing you to write assertions like `actual.Should().Be(expected)` while maintaining Shouldly's clear error messages. Designed to keep IntelliSense clean by separating the assertion methods into a dedicated namespace.</Description>
+    <Authors>benutomo</Authors>
+    <Copyright>© benutomo.</Copyright>
+    <PackageTags>Shouldly;Fluent;Assertion</PackageTags>
+    <PackageProjectUrl>https://github.com/benutomo-dev/FluentShouldly</PackageProjectUrl>
+    <RepositoryUrl>$(PackageProjectUrl)</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Shouldly" Version="4.3.0" IncludeAssets="all" PrivateAssets="compile"  />
+  </ItemGroup>
+
+</Project>
