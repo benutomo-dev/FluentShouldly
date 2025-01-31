@@ -36,7 +36,7 @@ public static class EnumerableShouldExtentions
 
     public static void BeSubsetOf<T>(this IEnumerableShould<T> should, IEnumerable<T> expected, string? customMessage = null) => should.Actual.ShouldBeSubsetOf(expected, customMessage);
 
-    public static void BeSubsetOf<T>(this IEnumerableShould<T> should, IEnumerable<T> expected, IEqualityComparer<T> comparer, string? customMessage = null) => should.Actual.ShouldBeSubsetOf(expected, customMessage);
+    public static void BeSubsetOf<T>(this IEnumerableShould<T> should, IEnumerable<T> expected, IEqualityComparer<T> comparer, string? customMessage = null) => should.Actual.ShouldBeSubsetOf(expected, comparer, customMessage);
 
     public static void BeUnique<T>(this IEnumerableShould<T> should, string? customMessage = null) => should.Actual.ShouldBeUnique(customMessage);
 
