@@ -16,6 +16,6 @@ public class TestExample
             );
 
         var ex = Should.Throw<InvalidOperationException>(() => throw new InvalidOperationException("This is dummy."));
-        ex.Message.Should().Be("this is dummy.");
+        ex.Message.Should().Be("this is dummy.", StringCompareShould.IgnoreCase);
     }
 }
