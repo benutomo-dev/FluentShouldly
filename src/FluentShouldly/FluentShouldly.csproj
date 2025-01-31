@@ -6,7 +6,7 @@
 
   <!-- NuGet -->
   <PropertyGroup>
-    <PackageVersion>0.0.3-preview</PackageVersion>
+    <PackageVersion>0.0.4-preview</PackageVersion>
 
     <PackageId>Benutomo.FluentShouldly</PackageId>
     <Description>FluentAssertions-style syntax support for Shouldly. This package provides a fluent interface for Shouldly assertions, allowing you to write assertions like `actual.Should().Be(expected)` while maintaining Shouldly's clear error messages. Designed to keep IntelliSense clean by separating the assertion methods into a dedicated namespace.</Description>
