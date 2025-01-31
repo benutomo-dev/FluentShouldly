@@ -23,9 +23,17 @@ public static class BeExtentions
 
     public static void Be<T>(this IEnumerableShould<T> should, IEnumerable<T>? expected, string? customMessage = null) => should.Actual.ShouldBe(expected, customMessage);
 
+    public static void Be<T>(this IEnumerableShould<T> should, IEnumerable<T>? expected, bool ignoreOrder, string? customMessage = null) => should.Actual.ShouldBe(expected, ignoreOrder, customMessage);
+
     public static void Be<T>(this IEnumerableShould<T> should, IEnumerable<T>? expected, IEqualityComparer<T> comparer, bool ignoreOrder = false, string? customMessage = null) => should.Actual.ShouldBe(expected, comparer, ignoreOrder, customMessage);
 
-    public static void Be(this IEnumerableShould<decimal> should, IEnumerable<decimal> expected, decimal tolerance, bool ignoreOrder = false, string? customMessage = null) => should.Actual.ShouldBe(expected, tolerance, customMessage);
+    public static void Be(this IEnumerableShould<decimal> should, IEnumerable<decimal> expected, decimal tolerance, string? customMessage = null) => should.Actual.ShouldBe(expected, tolerance, customMessage);
+
+    public static void Be(this IEnumerableShould<float> should, IEnumerable<float> expected, double tolerance, string? customMessage = null) => should.Actual.ShouldBe(expected, tolerance, customMessage);
+
+    public static void Be(this IEnumerableShould<double> should, IEnumerable<double> expected, double tolerance, string? customMessage = null) => should.Actual.ShouldBe(expected, tolerance, customMessage);
+
+    public static void Be(this IEnumerableShould<string> should, IEnumerable<string> expected, Case caseSensitivity, string? customMessage = null) => should.Actual.ShouldBe(expected, (Shouldly.Case)(int)caseSensitivity, customMessage);
 
 
     public static void Be(this IShould<float> should, float expected, double tolerance, string? customMessage = null) => should.Actual.ShouldBe(expected, tolerance, customMessage);
@@ -33,11 +41,6 @@ public static class BeExtentions
     public static void Be(this IShould<double> should, double expected, double tolerance, string? customMessage = null) => should.Actual.ShouldBe(expected, tolerance, customMessage);
 
     public static void Be(this IShould<decimal> should, decimal expected, decimal tolerance, string? customMessage = null) => should.Actual.ShouldBe(expected, tolerance, customMessage);
-
-
-    public static void Be<T>(this IEnumerableShould<float> should, IEnumerable<float> expected, double tolerance, string? customMessage = null) => should.Actual.ShouldBe(expected, tolerance, customMessage);
-
-    public static void Be<T>(this IEnumerableShould<double> should, IEnumerable<double> expected, double tolerance, string? customMessage = null) => should.Actual.ShouldBe(expected, tolerance, customMessage);
 
 
     public static void Be(this IStringShould should, string expected, string? customMessage = null) => should.Actual.ShouldBe(expected, customMessage);
