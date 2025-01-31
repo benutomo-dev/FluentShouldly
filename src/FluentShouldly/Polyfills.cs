@@ -1,4 +1,6 @@
-﻿namespace System.Diagnostics.CodeAnalysis
+﻿#pragma warning disable IDE0130 // Namespace がフォルダー構造と一致しません
+
+namespace System.Diagnostics.CodeAnalysis
 {
 #if !NETCOREAPP3_0_OR_GREATER
     internal sealed class NotNullAttribute : Attribute { }
