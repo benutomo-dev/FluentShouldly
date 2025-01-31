@@ -3,7 +3,6 @@
 namespace FluentShouldly.Core;
 
 [ShouldlyMethods]
-public class EnumerableShould<T> : ObjectShould<IEnumerable<T>>, IEnumerableShould<T>
+public class EnumerableShould<T>(IEnumerable<T> actual) : ObjectShould<IEnumerable<T>>(actual), IEnumerableShould<T>
 {
-    public EnumerableShould(IEnumerable<T> actual) : base(actual) { }
 }

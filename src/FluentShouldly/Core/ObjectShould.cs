@@ -3,14 +3,9 @@
 namespace FluentShouldly.Core;
 
 [ShouldlyMethods]
-public class ObjectShould<T> : IShould<T>, INotTypeShould<T>
+public class ObjectShould<T>(T actual) : IShould<T>, INotTypeShould<T>
 {
-    public T Actual { get; }
-
-    public ObjectShould(T actual)
-    {
-        Actual = actual;
-    }
+    public T Actual { get; } = actual;
 
     public TAssignable? BeAssignableTo<TAssignable>(string? customMessage = null) where TAssignable : notnull => Actual.ShouldBeAssignableTo<TAssignable>(customMessage);
 

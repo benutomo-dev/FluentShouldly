@@ -11,14 +11,9 @@ namespace System.Runtime.CompilerServices
 {
 #if !NET9_0_OR_GREATER
     [AttributeUsage(AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property, AllowMultiple = false, Inherited = false)]
-    internal sealed class OverloadResolutionPriorityAttribute : Attribute
+    internal sealed class OverloadResolutionPriorityAttribute(int priority) : Attribute
     {
-        public OverloadResolutionPriorityAttribute(int priority)
-        {
-            Priority = priority;
-        }
-
-        public int Priority { get; }
+        public int Priority { get; } = priority;
     }
 #endif
 }

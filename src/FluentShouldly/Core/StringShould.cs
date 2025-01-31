@@ -3,7 +3,6 @@
 namespace FluentShouldly.Core;
 
 [ShouldlyMethods]
-public class StringShould : ObjectShould<string?>, IStringShould
+public class StringShould(string? actual) : ObjectShould<string?>(actual), IStringShould
 {
-    public StringShould(string? actual) : base(actual) { }
 }
